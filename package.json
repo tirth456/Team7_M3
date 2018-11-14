@@ -1,17 +1,15 @@
 {
-    "name": "mapd713m3",
+    "name": "milestone2",
     "version": "1.0.0",
-    "description": "RestAPI - Project - M2",
+    "description": "Project M2",
     "dependencies": {
-        "mongo": "^0.1.0",
-        "mongoose": "^5.3.10",
-        "restify": "^4.3.4",
-        "save": "^2.3.2"
+        "restify": "4.1.1",
+        "save": "2.3.0"
     },
     "author": "Team7",
     "private": true,
     "main": "index.js",
     "scripts": {
-		"start": "node index.js"
-	}
+        "start": "node index.js"
+    }
 }
