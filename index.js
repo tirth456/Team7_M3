@@ -4,53 +4,53 @@ var port = process.env.PORT;
 // var DEFAULT_HOST = '127.0.0.1'
 
 //var http = require ('http');
-var mongoose = require ("mongoose");
+//var mongoose = require ("mongoose");
 
 ///var port = process.env.PORT;
-var ipaddress = process.env.IP; // TODO: figure out which IP to use for the heroku
+//var ipaddress = process.env.IP; // TODO: figure out which IP to use for the heroku
 
 // Here we find an appropriate database to connect to, defaulting to
 // localhost if we don't find one.  
-var uristring = 
-  process.env.MONGODB_URI || 
-  'mongodb://localhost/patient-db';
+// var uristring = 
+//   process.env.MONGODB_URI || 
+//   'mongodb://localhost/patient-db';
 
-// Makes connection asynchronously.  Mongoose will queue up database
-// operations and release them when the connection is complete.
-mongoose.connect(uristring, function (err, res) {
-  if (err) { 
-    console.log ('ERROR connecting to: ' + uristring + '. ' + err);
-  } else {
-    console.log ('Successfully connected to: ' + uristring);
-  }
-});
+// // Makes connection asynchronously.  Mongoose will queue up database
+// // operations and release them when the connection is complete.
+// mongoose.connect(uristring, function (err, res) {
+//   if (err) { 
+//     console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+//   } else {
+//     console.log ('Successfully connected to: ' + uristring);
+//   }
+// });
 
 // This is the schema.  Note the types, validation and trim
 // statements.  They enforce useful constraints on the data.
-var patientSchema = new mongoose.Schema({
-		first_name: String, 
-    last_name: String, 
-    dob: String,
-		address: String,
-		department: String,
-		doctor: String
-});
+// var patientSchema = new mongoose.Schema({
+// 		first_name: String, 
+//     last_name: String, 
+//     dob: String,
+// 		address: String,
+// 		department: String,
+// 		doctor: String
+// });
 
 // schema for patient records
 
-var recordSchema = new mongoose.Schema({
-  patient_id: mongoose.Schema.Types.ObjectId,
-  blood_pressure: String,
-  resp_rate: String,
-  blood_oxygen: String,
-  record_date: String
-});
+// var recordSchema = new mongoose.Schema({
+//   patient_id: mongoose.Schema.Types.ObjectId,
+//   blood_pressure: String,
+//   resp_rate: String,
+//   blood_oxygen: String,
+//   record_date: String
+// });
 
-// Compiles the schema into a model, opening (or creating, if
-// nonexistent) the 'Patients' collection in the MongoDB database
-var Patients = mongoose.model('Patient', patientSchema);
+// // Compiles the schema into a model, opening (or creating, if
+// // nonexistent) the 'Patients' collection in the MongoDB database
+// var Patients = mongoose.model('Patient', patientSchema);
 
-var Records = mongoose.model('Record',recordSchema);
+// var Records = mongoose.model('Record',recordSchema);
 
 var restify = require('restify')
 
