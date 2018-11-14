@@ -1,5 +1,5 @@
 {
-    "name": "MAPD713-Milestone2",
+    "name": "mapd713m3",
     "version": "1.0.0",
     "description": "RestAPI - Project - M2",
     "dependencies": {
@@ -10,5 +10,8 @@
     },
     "author": "Team7",
     "private": true,
-    "main": "index.js"
+    "main": "index.js",
+    "scripts": {
+		"start": "node index.js"
+	}
 }
